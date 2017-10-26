@@ -1,6 +1,6 @@
 {
   "name": "util.string",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "author": "jmquigley <jmquigley@outlook.com>",
   "description": "Library of string helper functions",
   "private": false,
@@ -38,7 +38,7 @@
     "build": "pkgwrap --build",
     "clean": "pkgwrap --clean",
     "coverage": "pkgwrap --coverage",
-		"docs": "pkgwrap --docs",
+    "docs": "pkgwrap --docs",
     "lint": "pkgwrap --lint",
     "postinstall": "pkgwrap --postinstall",
     "report": "pkgwrap --reporting",
