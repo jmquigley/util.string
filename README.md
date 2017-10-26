@@ -25,6 +25,15 @@ $ yarn run all
 
 
 ## Overview
+This module contains custom string functions that are not part of the current javascript string library.
 
 
-## Usage
+## API
+
+#### functions
+
+- [capitalize](docs/index.md#capitalize)
+- [join](docs/index.md#join)
+- [regexIndexOf](docs/index.md#regexIndexOf)
+- [translateHTML](docs/index.md#translateHTML)
+- [trimHTML](docs/index.md#trimHTML)
