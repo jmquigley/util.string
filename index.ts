@@ -22,6 +22,7 @@ const reSPC: RegExp = XRegExp(`${sp}`, 'g');
 declare global {
 	interface String {
 		capitalize(): string;
+		splitNL(): string[];
 		translateHTML(): string;
 		trimHTML(): string;
 	}
@@ -29,6 +30,10 @@ declare global {
 
 String.prototype.capitalize = function() {
 	return this.charAt(0).toUpperCase() + this.slice(1);
+};
+
+String.prototype.splitNL = function() {
+	return this.split(/\r\n|\n|\r/);
 };
 
 String.prototype.translateHTML = function() {
@@ -78,6 +83,17 @@ export function join(obj: Set<string>, delimiter: string = ''): string {
 export function regexIndexOf(text: string, re: RegExp, start: number = 0): number {
 	const idx: number = text.slice(start).search(re);
 	return idx < 0 ? -1 : idx + start;
+}
+
+/**
+ * Splits a string into an array of strings based on the newline character.  It
+ * will search for a windows and/or unix line endings for the split.
+ * @param text {string} the string to split
+ * @return {string[]} an array of strings representing each stirng split at the
+ * newline characters.  The newline characters are not included.
+ */
+export function splitNL(text: string): string[] {
+	return text.splitNL();
 }
 
 /**

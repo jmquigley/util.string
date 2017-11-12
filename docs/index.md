@@ -13,6 +13,10 @@ delimiter.</p>
 <dt><a href="#regexIndexOf">regexIndexOf(text, re, i)</a> ⇒ <code>number</code></dt>
 <dd><p>Searches for the first location (index) within a given string using a regex</p>
 </dd>
+<dt><a href="#splitNL">splitNL(text)</a> ⇒ <code>Array.&lt;string&gt;</code></dt>
+<dd><p>Splits a string into an array of strings based on the newline character.  It
+will search for a windows and/or unix line endings for the split.</p>
+</dd>
 <dt><a href="#translateHTML">translateHTML(text)</a> ⇒ <code>string</code></dt>
 <dd><p>Takes an input string and replaces special HTML tokens with their string
 eqivalents.  e.g. &nbsp; is converted to a space</p>
@@ -68,6 +72,20 @@ If it is not found, then -1 is returned.
 | text | <code>string</code> | the string to search within |
 | re | <code>RegExp</code> | the regex object to search with |
 | i | <code>number</code> | a starting index value |
+
+<a name="splitNL"></a>
+
+## splitNL(text) ⇒ <code>Array.&lt;string&gt;</code>
+Splits a string into an array of strings based on the newline character.  It
+will search for a windows and/or unix line endings for the split.
+
+**Kind**: global function  
+**Returns**: <code>Array.&lt;string&gt;</code> - an array of strings representing each stirng split at the
+newline characters.  The newline characters are not included.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| text | <code>string</code> | the string to split |
 
 <a name="translateHTML"></a>
 

@@ -8,6 +8,7 @@ import {
 	capitalize,
 	join,
 	regexIndexOf,
+	splitNL,
 	translateHTML,
 	trimHTML
 } from './index';
@@ -53,4 +54,15 @@ test('Test special HTML trim function', t => {
 test('Test the capitalize function', t => {
 	t.is('abc'.capitalize(), 'Abc');
 	t.is(capitalize('abc'), 'Abc');
+});
+
+test('Test splitting a string on newline characters', t => {
+	t.deepEqual(splitNL('a\nb\nc'), ['a', 'b', 'c']);
+	t.deepEqual('a\nb\nc'.splitNL(), ['a', 'b', 'c']);
+
+	t.deepEqual(splitNL('a\rb\rc'), ['a', 'b', 'c']);
+	t.deepEqual('a\rb\rc'.splitNL(), ['a', 'b', 'c']);
+
+	t.deepEqual(splitNL('a\r\nb\r\nc'), ['a', 'b', 'c']);
+	t.deepEqual('a\r\nb\r\nc'.splitNL(), ['a', 'b', 'c']);
 });
