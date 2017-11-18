@@ -16,7 +16,7 @@
     "node": ">=7.5"
   },
   "dependencies": {
-    "util.constants": "^0.0.2",
+    "util.constants": "^0.0.3",
     "util.pkgwrap": "0.0.73",
     "xregexp": "^3.2.0"
   },
