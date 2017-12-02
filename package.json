@@ -1,6 +1,6 @@
 {
   "name": "util.string",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "jmquigley <jmquigley@outlook.com>",
   "description": "Library of string helper functions",
   "main": "./index.js",
@@ -37,7 +37,7 @@
   },
   "pkgwrap": {
     "cleanup": [
-			"docs/",
+      "docs/",
       "index.d.ts",
       "index.js",
       "test.d.ts",
@@ -52,7 +52,7 @@
     "docs": "pkgwrap --docs",
     "lint": "pkgwrap --lint",
     "preinstall": "yarn global add util.pkgwrap",
-		"prepublishOnly": "yarn run all",
+    "prepublishOnly": "yarn run all",
     "report": "pkgwrap --reporting",
     "test": "pkgwrap --testing --ava"
   }
