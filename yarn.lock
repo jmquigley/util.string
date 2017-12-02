@@ -3398,9 +3398,9 @@ util-deprecate@~1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
 
-util.constants@^0.0.5:
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/util.constants/-/util.constants-0.0.5.tgz#ad910af30b50b95e93e83e15bba0ba4c0a6fb050"
+util.constants@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/util.constants/-/util.constants-0.0.6.tgz#0d38eb97e9f4f6b1472e767b6dcce5f94987ecdf"
 
 uuid@^3.0.0, uuid@^3.1.0:
   version "3.1.0"
