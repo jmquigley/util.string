@@ -18,11 +18,11 @@
     "node": ">=7.x"
   },
   "dependencies": {
-    "util.constants": "^0.0.6",
+    "util.constants": "^0.0.7",
     "xregexp": "^3.2.0"
   },
   "devDependencies": {
-    "@types/node": "^8.0.53",
+    "@types/node": "^8.0.54",
     "@types/xregexp": "^3.0.29",
     "ava": "^0.24.0",
     "babel-preset-env": "^1.6.1",
@@ -30,7 +30,8 @@
     "debug": "^3.1.0",
     "nyc": "^11.3.0",
     "tslint": "^5.8.0",
-    "typescript": "^2.6.2"
+    "typescript": "^2.6.2",
+    "util.pkgwrap": "^0.0.88"
   },
   "ava": {
     "babel": "inherit"
@@ -51,7 +52,6 @@
     "coverage": "pkgwrap --coverage",
     "docs": "pkgwrap --docs",
     "lint": "pkgwrap --lint",
-    "preinstall": "yarn global add util.pkgwrap",
     "prepublishOnly": "yarn run all",
     "report": "pkgwrap --reporting",
     "test": "pkgwrap --testing --ava"
