@@ -18,20 +18,20 @@
     "node": ">=7.x"
   },
   "dependencies": {
-    "util.constants": "^0.0.7",
-    "xregexp": "^3.2.0"
+    "util.constants": "^0.0.9",
+    "xregexp": "^4.1.1"
   },
   "devDependencies": {
-    "@types/node": "^8.0.54",
+    "@types/node": "^9.6.5",
     "@types/xregexp": "^3.0.29",
-    "ava": "^0.24.0",
+    "ava": "^0.25.0",
     "babel-preset-env": "^1.6.1",
     "coveralls": "^3.0.0",
     "debug": "^3.1.0",
-    "nyc": "^11.3.0",
-    "tslint": "^5.8.0",
-    "typescript": "^2.6.2",
-    "util.pkgwrap": "^0.0.88"
+    "nyc": "^11.7.1",
+    "tslint": "^5.9.1",
+    "typescript": "^2.8.1",
+    "util.pkgwrap": "^0.0.90"
   },
   "ava": {
     "babel": "inherit"
