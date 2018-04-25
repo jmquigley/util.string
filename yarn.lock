@@ -60,9 +60,9 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@types/node@^9.6.5":
-  version "9.6.5"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-9.6.5.tgz#ee700810fdf49ac1c399fc5980b7559b3e5a381d"
+"@types/node@^9.6.6":
+  version "9.6.6"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-9.6.6.tgz#439b91f9caf3983cad2eef1e11f6bedcbf9431d2"
 
 "@types/xregexp@^3.0.29":
   version "3.0.29"
@@ -4344,9 +4344,9 @@ tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   version "0.14.5"
   resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
 
-typescript@^2.8.1:
-  version "2.8.1"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.8.1.tgz#6160e4f8f195d5ba81d4876f9c0cc1fbc0820624"
+typescript@^2.8.3:
+  version "2.8.3"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.8.3.tgz#5d817f9b6f31bb871835f4edf0089f21abe6c170"
 
 typical@^2.4.2, typical@^2.6.0, typical@^2.6.1:
   version "2.6.1"
@@ -4459,13 +4459,13 @@ util-deprecate@~1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
 
-util.constants@^0.0.9:
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/util.constants/-/util.constants-0.0.9.tgz#3b06dbaa0503f7cf09260e866d264a6478aed763"
+util.constants@^0.0.10:
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/util.constants/-/util.constants-0.0.10.tgz#70b54f324bf761511a4b9010120206fd693186ac"
 
-util.pkgwrap@^0.0.90:
-  version "0.0.90"
-  resolved "https://registry.yarnpkg.com/util.pkgwrap/-/util.pkgwrap-0.0.90.tgz#eea7f2ae5addf6506bf7229ac2f7ad308e8e7b12"
+util.pkgwrap@^0.0.91:
+  version "0.0.91"
+  resolved "https://registry.yarnpkg.com/util.pkgwrap/-/util.pkgwrap-0.0.91.tgz#ac725cc415c5177680a21bbc098d5650eb443bd6"
   dependencies:
     coveralls "^3.0.0"
     cpx "^1.5.0"

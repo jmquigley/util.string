@@ -20,7 +20,6 @@ test.d.ts
 *.js.map
 jsdoc.json
 gulpfile.js
-yarn.lock
 server.*
 .awcache
 .babelrc
@@ -28,3 +27,5 @@ server.*
 docs/
 public/
 webpack.config.js
+yarn.lock
+yarn-error.log
