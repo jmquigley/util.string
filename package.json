@@ -1,6 +1,6 @@
 {
   "name": "util.string",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "author": "jmquigley <jmquigley@outlook.com>",
   "description": "Library of string helper functions",
   "main": "./index.js",
@@ -44,7 +44,13 @@
     "coveragePathIgnorePatterns": [
       "<rootDir>/node_modules/"
     ],
-    "moduleFileExtensions": ["js", "jsx", "ts", "tsx", "json"],
+    "moduleFileExtensions": [
+      "js",
+      "jsx",
+      "ts",
+      "tsx",
+      "json"
+    ],
     "notify": false,
     "testPathIgnorePatterns": [
       "<rootDir>/node_modules/"
