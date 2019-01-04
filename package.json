@@ -22,9 +22,6 @@
     "xregexp": "^4.2.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.2.3",
-    "@babel/core": "^7.2.2",
-    "@babel/preset-env": "^7.2.3",
     "@types/node": "^10.12.18",
     "@types/xregexp": "^3.0.29",
     "debug": "^4.1.1",
