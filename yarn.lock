@@ -963,7 +963,7 @@ core-util-is@1.0.2, core-util-is@~1.0.0:
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
   integrity sha1-tf1UIgqivFq1eqtxQMlAdUUDwac=
 
-coveralls@^3.0.2:
+coveralls@^3.0.0, coveralls@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/coveralls/-/coveralls-3.0.2.tgz#f5a0bcd90ca4e64e088b710fa8dda640aea4884f"
   integrity sha512-Tv0LKe/MkBOilH2v7WBiTBdudg2ChfGbdXafc/s330djpF3zKOmuehTeRwjXWc7pzfj9FrDUTA7tEx6Div8NFw==
@@ -4718,10 +4718,10 @@ util-deprecate@~1.0.1:
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
   integrity sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=
 
-util.constants@^0.0.13:
-  version "0.0.13"
-  resolved "https://registry.yarnpkg.com/util.constants/-/util.constants-0.0.13.tgz#4f2136828d4e5674d4c80381b8728dde4cc455f6"
-  integrity sha512-OY25WScPkxLgKrqq5UtF66oX+CrrBDIGlmoqG488LPivuypYbn240FHBi17ewhczVr27BNnHUPeFLNQo4ugXiA==
+util.constants@^0.0.15:
+  version "0.0.15"
+  resolved "https://registry.yarnpkg.com/util.constants/-/util.constants-0.0.15.tgz#3f844cc426fc43da7bb3af78d815cb78b66c6843"
+  integrity sha512-dzD+s6P9oMrtD9hnj297FPRuiz99sKiipDQqVKhE8o8ffYZX4ZVmU4LTqdQ5vCRz43RsODJrg9JcbQSXcB1hxw==
 
 util.pkgwrap@^0.0.94:
   version "0.0.94"

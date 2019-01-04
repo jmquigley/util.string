@@ -18,12 +18,13 @@
     "node": ">=7.x"
   },
   "dependencies": {
-    "util.constants": "^0.0.14",
+    "util.constants": "^0.0.15",
     "xregexp": "^4.2.0"
   },
   "devDependencies": {
     "@types/node": "^10.12.18",
     "@types/xregexp": "^3.0.29",
+    "coveralls": "^3.0.0",
     "debug": "^4.1.1",
     "jest": "^23.6.0",
     "tslint": "^5.12.0",
