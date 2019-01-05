@@ -18,13 +18,13 @@
     "node": ">=7.x"
   },
   "dependencies": {
-    "util.constants": "^0.0.15",
+    "util.constants": "^0.0.16",
     "xregexp": "^4.2.0"
   },
   "devDependencies": {
     "@types/node": "^10.12.18",
     "@types/xregexp": "^3.0.29",
-    "coveralls": "^3.0.0",
+    "coveralls": "^3.0.2",
     "debug": "^4.1.1",
     "jest": "^23.6.0",
     "tslint": "^5.12.0",
@@ -65,7 +65,7 @@
     "all": "yarn install && yarn run build && yarn run docs && yarn test",
     "build": "yarn run clean && yarn run lint && pkgwrap --build",
     "clean": "pkgwrap --clean",
-    "coverage": "pkgwrap --coverage",
+    "coverage": "pkgwrap --coverage --jest",
     "docs": "pkgwrap --docs",
     "lint": "pkgwrap --lint",
     "prepublishOnly": "yarn run all",
