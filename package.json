@@ -1,6 +1,6 @@
 {
   "name": "util.string",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "author": "jmquigley <jmquigley@outlook.com>",
   "description": "Library of string helper functions",
   "main": "./index.js",
