@@ -39,6 +39,11 @@
 		"typescript": "^3.3.3",
 		"util.pkgwrap": "^0.0.98"
 	},
+	"pkgwrap": {
+		"cleanup": [
+			"docs/"
+		]
+	},
 	"scripts": {
 		"all": "yarn install && yarn prettier && yarn build && yarn docs && yarn test && yarn minify",
 		"build": "yarn clean && yarn lint && pkgwrap --build",
