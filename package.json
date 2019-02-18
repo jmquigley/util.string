@@ -1,6 +1,6 @@
 {
 	"name": "util.string",
-	"version": "0.0.17",
+	"version": "0.0.18",
 	"author": "jmquigley <jmquigley@outlook.com>",
 	"description": "Library of string helper functions",
 	"private": false,
