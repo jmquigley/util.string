@@ -1,23 +1,23 @@
-'use strict';
+"use strict";
 
-const debug = require('debug')('util.string');
+const debug = require("debug")("util.string");
 
-import {sp} from 'util.constants';
-import * as XRegExp from 'xregexp';
+import {sp} from "util.constants";
+import * as XRegExp from "xregexp";
 
 const chevrons = {
 	quot: '"',
-	nbsp: ' ',
-	amp: '&',
-	lt: '<',
-	gt: '>'
+	nbsp: " ",
+	amp: "&",
+	lt: "<",
+	gt: ">"
 };
 
-const s = Object.keys(chevrons).join('|');
-debug('Using chevrons: %s', s);
+const s = Object.keys(chevrons).join("|");
+debug("Using chevrons: %s", s);
 
-const reHTML: RegExp  = XRegExp(`&(${s});`, 'gi');
-const reSPC: RegExp = XRegExp(`${sp}`, 'g');
+const reHTML: RegExp = XRegExp(`&(${s});`, "gi");
+const reSPC: RegExp = XRegExp(`${sp}`, "g");
 
 declare global {
 	interface String {
@@ -44,7 +44,9 @@ String.prototype.translateHTML = function() {
 };
 
 String.prototype.trimHTML = function() {
-	return this.translateHTML().replace(reSPC, ' ').trim();
+	return this.translateHTML()
+		.replace(reSPC, " ")
+		.trim();
 };
 
 /**
@@ -68,7 +70,7 @@ export function capitalize(text: string): string {
  * @param obj {Set<string>} the set of strings that will be joined together
  * @return {string} a new string
  */
-export function join(obj: Set<string>, delimiter: string = ''): string {
+export function join(obj: Set<string>, delimiter: string = ""): string {
 	return Array.from(obj).join(delimiter);
 }
 
@@ -80,7 +82,11 @@ export function join(obj: Set<string>, delimiter: string = ''): string {
  * @return {number} the index value location where the regex match was found
  * If it is not found, then -1 is returned.
  */
-export function regexIndexOf(text: string, re: RegExp, start: number = 0): number {
+export function regexIndexOf(
+	text: string,
+	re: RegExp,
+	start: number = 0
+): number {
 	const idx: number = text.slice(start).search(re);
 	return idx < 0 ? -1 : idx + start;
 }

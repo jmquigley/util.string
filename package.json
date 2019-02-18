@@ -1,74 +1,55 @@
 {
-  "name": "util.string",
-  "version": "0.0.17",
-  "author": "jmquigley <jmquigley@outlook.com>",
-  "description": "Library of string helper functions",
-  "main": "./index.js",
-  "types": "./index.d.ts",
-  "private": false,
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jmquigley/util.string"
-  },
-  "bugs": {
-    "url": "https://github.com/jmquigley/util.string/issues"
-  },
-  "engines": {
-    "node": ">=7.x"
-  },
-  "dependencies": {
-    "util.constants": "^0.0.16",
-    "xregexp": "^4.2.0"
-  },
-  "devDependencies": {
-    "@types/node": "^10.12.18",
-    "@types/xregexp": "^3.0.29",
-    "coveralls": "^3.0.2",
-    "debug": "^4.1.1",
-    "jest": "^23.6.0",
-    "tslint": "^5.12.0",
-    "typescript": "^3.2.2",
-    "typescript-babel-jest": "^1.0.5",
-    "util.pkgwrap": "^0.0.94"
-  },
-  "pkgwrap": {
-    "cleanup": [
-      "docs/",
-      "index.d.ts",
-      "index.js"
-    ]
-  },
-  "jest": {
-    "collectCoverage": true,
-    "coveragePathIgnorePatterns": [
-      "<rootDir>/node_modules/"
-    ],
-    "moduleFileExtensions": [
-      "js",
-      "jsx",
-      "ts",
-      "tsx",
-      "json"
-    ],
-    "notify": false,
-    "testPathIgnorePatterns": [
-      "<rootDir>/node_modules/"
-    ],
-    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
-    "transform": {
-      "^.+\\.ts?$": "typescript-babel-jest"
-    },
-    "verbose": false
-  },
-  "scripts": {
-    "all": "yarn install && yarn run build && yarn run docs && yarn test",
-    "build": "yarn run clean && yarn run lint && pkgwrap --build",
-    "clean": "pkgwrap --clean",
-    "coverage": "pkgwrap --coverage --jest",
-    "docs": "pkgwrap --docs",
-    "lint": "pkgwrap --lint",
-    "prepublishOnly": "yarn run all",
-    "test": "pkgwrap --testing --jest"
-  }
+	"name": "util.string",
+	"version": "0.0.17",
+	"author": "jmquigley <jmquigley@outlook.com>",
+	"description": "Library of string helper functions",
+	"private": false,
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/jmquigley/util.string"
+	},
+	"bugs": {
+		"url": "https://github.com/jmquigley/util.string/issues"
+	},
+	"engines": {
+		"node": ">=7.x"
+	},
+	"main": "./index.min.js",
+	"types": "./index.d.ts",
+	"dependencies": {
+		"util.constants": "^0.0.18",
+		"xregexp": "^4.2.4"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.3.3",
+		"@babel/preset-env": "^7.3.1",
+		"@babel/preset-typescript": "^7.3.3",
+		"@babel/runtime": "^7.3.1",
+		"@types/jest": "^24.0.5",
+		"@types/node": "^11.9.4",
+		"@types/xregexp": "^3.0.29",
+		"babel-minify": "^0.5.0",
+		"coveralls": "^3.0.2",
+		"debug": "^4.1.1",
+		"jest": "^24.1.0",
+		"prettier": "^1.16.4",
+		"tslint": "^5.12.1",
+		"tslint-config-prettier": "^1.18.0",
+		"typescript": "^3.3.3",
+		"util.pkgwrap": "^0.0.98"
+	},
+	"scripts": {
+		"all": "yarn install && yarn prettier && yarn build && yarn docs && yarn test && yarn minify",
+		"build": "yarn clean && yarn lint && pkgwrap --build",
+		"clean": "pkgwrap --clean",
+		"clean:dist": "yarn clean && rimraf node_modules/ yarn.lock",
+		"coverage": "pkgwrap --coverage --jest",
+		"docs": "pkgwrap --docs",
+		"lint": "pkgwrap --lint",
+		"minify": "minify ./index.js --out-file ./index.min.js",
+		"prepublishOnly": "yarn run all",
+		"prettier": "prettier --write \"**/*.{ts,tsx,js,json,yaml,yml,css}\"",
+		"test": "jest"
+	}
 }
