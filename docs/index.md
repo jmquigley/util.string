@@ -40,10 +40,9 @@ capitalize('abc'); // 'Abc'
 
 **Kind**: global function  
 **Returns**: <code>string</code> - the newly capitalized string.  
+**Params**
 
-| Param | Type | Description |
-| --- | --- | --- |
-| text | <code>string</code> | the input string to cacpitalize |
+- text <code>string</code> - the input string to cacpitalize
 
 <a name="join"></a>
 
@@ -53,10 +52,9 @@ delimiter.
 
 **Kind**: global function  
 **Returns**: <code>string</code> - a new string  
+**Params**
 
-| Param | Type | Description |
-| --- | --- | --- |
-| obj | <code>Set.&lt;string&gt;</code> | the set of strings that will be joined together |
+- obj <code>Set.&lt;string&gt;</code> - the set of strings that will be joined together
 
 <a name="regexIndexOf"></a>
 
@@ -66,12 +64,11 @@ Searches for the first location (index) within a given string using a regex
 **Kind**: global function  
 **Returns**: <code>number</code> - the index value location where the regex match was found
 If it is not found, then -1 is returned.  
+**Params**
 
-| Param | Type | Description |
-| --- | --- | --- |
-| text | <code>string</code> | the string to search within |
-| re | <code>RegExp</code> | the regex object to search with |
-| i | <code>number</code> | a starting index value |
+- text <code>string</code> - the string to search within
+- re <code>RegExp</code> - the regex object to search with
+- i <code>number</code> - a starting index value
 
 <a name="splitNL"></a>
 
@@ -82,10 +79,9 @@ will search for a windows and/or unix line endings for the split.
 **Kind**: global function  
 **Returns**: <code>Array.&lt;string&gt;</code> - an array of strings representing each stirng split at the
 newline characters.  The newline characters are not included.  
+**Params**
 
-| Param | Type | Description |
-| --- | --- | --- |
-| text | <code>string</code> | the string to split |
+- text <code>string</code> - the string to split
 
 <a name="translateHTML"></a>
 
@@ -95,10 +91,9 @@ eqivalents.  e.g. &nbsp; is converted to a space
 
 **Kind**: global function  
 **Returns**: <code>string</code> - a new string with their replacements  
+**Params**
 
-| Param | Type | Description |
-| --- | --- | --- |
-| text | <code>string</code> | the text string to translate |
+- text <code>string</code> - the text string to translate
 
 <a name="trimHTML"></a>
 
@@ -109,8 +104,7 @@ before the trim (so it can remove all types of spaces)
 
 **Kind**: global function  
 **Returns**: <code>string</code> - a new string with spaces trimmed.  
+**Params**
 
-| Param | Type | Description |
-| --- | --- | --- |
-| text | <code>string</code> | the text string to trim |
+- text <code>string</code> - the text string to trim
 
