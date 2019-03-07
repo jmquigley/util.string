@@ -23,7 +23,7 @@
 		"index.d.ts"
 	],
 	"dependencies": {
-		"util.constants": "^0.0.21",
+		"util.constants": "^0.0.22",
 		"xregexp": "^4.2.4"
 	},
 	"devDependencies": {
@@ -34,18 +34,18 @@
 		"@babel/preset-typescript": "^7.3.3",
 		"@babel/runtime": "^7.3.4",
 		"@types/jest": "^24.0.9",
-		"@types/node": "^11.9.6",
+		"@types/node": "^11.10.5",
 		"@types/xregexp": "^3.0.29",
 		"babel-minify": "^0.5.0",
 		"babel-preset-minify": "^0.5.0",
 		"coveralls": "^3.0.3",
 		"debug": "^4.1.1",
-		"jest": "^24.1.0",
+		"jest": "^24.3.0",
 		"prettier": "^1.16.4",
-		"tslint": "^5.13.0",
+		"tslint": "^5.13.1",
 		"tslint-config-prettier": "^1.18.0",
 		"typescript": "^3.3.3333",
-		"util.pkgwrap": "^0.0.102"
+		"util.pkgwrap": "^0.0.104"
 	},
 	"pkgwrap": {
 		"cleanup": [
