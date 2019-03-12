@@ -10,7 +10,7 @@ import {
 	splitNL,
 	translateHTML,
 	trimHTML
-} from "../index";
+} from "./index";
 
 test("Test join function to combine a set into a string", () => {
 	const x: Set<string> = new Set<string>(["a", "b", "c"]);
