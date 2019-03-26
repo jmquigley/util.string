@@ -13,6 +13,11 @@ delimiter.</p>
 <dt><a href="#regexIndexOf">regexIndexOf(text, re, i)</a> ⇒ <code>number</code></dt>
 <dd><p>Searches for the first location (index) within a given string using a regex</p>
 </dd>
+<dt><a href="#splitInTwo">splitInTwo(text, delimiter)</a> ⇒</dt>
+<dd><p>Splits a string into a left an right string tuple based on a given delimiter.
+The delimter is not included in either string (the first instance encountered)
+This function will not trim the left/right string as a side effect.</p>
+</dd>
 <dt><a href="#splitNL">splitNL(text)</a> ⇒ <code>Array.&lt;string&gt;</code></dt>
 <dd><p>Splits a string into an array of strings based on the newline character.  It
 will search for a windows and/or unix line endings for the split.</p>
@@ -69,6 +74,24 @@ If it is not found, then -1 is returned.
 - text <code>string</code> - the string to search within
 - re <code>RegExp</code> - the regex object to search with
 - i <code>number</code> - a starting index value
+
+<a name="splitInTwo"></a>
+
+## splitInTwo(text, delimiter) ⇒
+Splits a string into a left an right string tuple based on a given delimiter.
+The delimter is not included in either string (the first instance encountered)
+This function will not trim the left/right string as a side effect.
+
+**Kind**: global function  
+**Returns**: a tuple containing the left side and the right side of the delimter.
+both values are a string.  If no delimiter was found then the whole string
+is returned in the first position of the tuple and the second part is an
+empty string.  
+**Params**
+
+- text <code>string</code> - the string to split
+- delimiter <code>string</code> - the string within the text string where the split
+will occur.
 
 <a name="splitNL"></a>
 

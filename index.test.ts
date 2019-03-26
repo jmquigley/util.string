@@ -7,6 +7,7 @@ import {
 	capitalize,
 	join,
 	regexIndexOf,
+	splitInTwo,
 	splitNL,
 	translateHTML,
 	trimHTML
@@ -25,12 +26,14 @@ test("Test searching for index in string using regex", () => {
 	expect(regexIndexOf("abcdefghijk", /k/)).toBe(10);
 	expect(regexIndexOf("abcdefghijk", /def/)).toBe(3);
 	expect(regexIndexOf("123abcdefghijklmnop", /[a-zA-Z]/)).toBe(3);
+	expect("123abcdefghijklmnop".regexIndexOf(/[a-zA-Z]/)).toBe(3);
 
 	// not found
 	expect(regexIndexOf("abcdefghijk", /[0-9]/)).toBe(-1);
 
 	// finds the second set of 'aaa', but contains abs index
 	expect(regexIndexOf("aaabbbcccaaa", /aaa/, 3)).toBe(9);
+	expect("aaabbbcccaaa".regexIndexOf(/aaa/, 3)).toBe(9);
 });
 
 test("Test translation of HTML string entities", () => {
@@ -64,4 +67,37 @@ test("Test splitting a string on newline characters", () => {
 
 	expect(splitNL("a\r\nb\r\nc")).toEqual(["a", "b", "c"]);
 	expect("a\r\nb\r\nc".splitNL()).toEqual(["a", "b", "c"]);
+});
+
+test("Split a string in two by a delimiter", () => {
+	let s = "The left side . The right side.";
+	let [left, right] = splitInTwo(s, ".");
+
+	expect(left).toBe("The left side ");
+	expect(right).toBe(" The right side.");
+
+	s = ". The right side only";
+	[left, right] = splitInTwo(s, ".");
+	expect(left).toBe("");
+	expect(right).toBe(" The right side only");
+
+	s = "The left side only .";
+	[left, right] = splitInTwo(s, ".");
+	expect(left).toBe("The left side only ");
+	expect(right).toBe("");
+
+	s = "No delimter in the string";
+	[left, right] = splitInTwo(s, ".");
+	expect(left).toBe("No delimter in the string");
+	expect(right).toBe("");
+
+	s = "left abcd right";
+	[left, right] = splitInTwo(s, "abcd");
+	expect(left).toBe("left ");
+	expect(right).toBe(" right");
+
+	s = "left abcd right";
+	[left, right] = s.splitInTwo("abcd");
+	expect(left).toBe("left ");
+	expect(right).toBe(" right");
 });

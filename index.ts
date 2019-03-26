@@ -22,6 +22,8 @@ const reSPC: RegExp = XRegExp(`${sp}`, "g");
 declare global {
 	interface String {
 		capitalize(): string;
+		regexIndexOf(re: RegExp, start: number): number;
+		splitInTwo(delimiter: string): [string, string];
 		splitNL(): string[];
 		translateHTML(): string;
 		trimHTML(): string;
@@ -30,6 +32,14 @@ declare global {
 
 String.prototype.capitalize = function() {
 	return this.charAt(0).toUpperCase() + this.slice(1);
+};
+
+String.prototype.regexIndexOf = function(re: RegExp, start: number = 0) {
+	return regexIndexOf(this, re, start);
+};
+
+String.prototype.splitInTwo = function(delimiter: string) {
+	return splitInTwo(this, delimiter);
 };
 
 String.prototype.splitNL = function() {
@@ -89,6 +99,28 @@ export function regexIndexOf(
 ): number {
 	const idx: number = text.slice(start).search(re);
 	return idx < 0 ? -1 : idx + start;
+}
+
+/**
+ * Splits a string into a left an right string tuple based on a given delimiter.
+ * The delimter is not included in either string (the first instance encountered)
+ * This function will not trim the left/right string as a side effect.
+ * @param text {string} the string to split
+ * @param delimiter {string} the string within the text string where the split
+ * will occur.
+ * @return a tuple containing the left side and the right side of the delimter.
+ * both values are a string.  If no delimiter was found then the whole string
+ * is returned in the first position of the tuple and the second part is an
+ * empty string.
+ */
+export function splitInTwo(text: string, delimiter: string): [string, string] {
+	const index: number = text.indexOf(delimiter);
+
+	if (index === -1) {
+		return [text, ""];
+	}
+
+	return [text.slice(0, index), text.slice(index + delimiter.length)];
 }
 
 /**
