@@ -1,6 +1,6 @@
 {
 	"name": "util.string",
-	"version": "0.0.23",
+	"version": "0.0.24",
 	"author": "jmquigley <jmquigley@outlook.com>",
 	"description": "Library of string helper functions",
 	"private": false,
@@ -27,34 +27,35 @@
 		"xregexp": "^4.2.4"
 	},
 	"devDependencies": {
-		"@babel/cli": "^7.2.3",
-		"@babel/core": "^7.4.0",
+		"@babel/cli": "^7.4.3",
+		"@babel/core": "^7.4.3",
 		"@babel/plugin-transform-modules-umd": "^7.2.0",
-		"@babel/preset-env": "^7.4.2",
+		"@babel/preset-env": "^7.4.3",
 		"@babel/preset-typescript": "^7.3.3",
-		"@babel/runtime": "^7.4.2",
+		"@babel/runtime": "^7.4.3",
 		"@types/jest": "^24.0.11",
-		"@types/node": "^11.11.7",
+		"@types/node": "^11.13.4",
 		"@types/xregexp": "^3.0.29",
 		"babel-minify": "^0.5.0",
 		"babel-preset-minify": "^0.5.0",
 		"coveralls": "^3.0.3",
 		"debug": "^4.1.1",
-		"jest": "^24.5.0",
+		"jest": "^24.7.1",
 		"prettier": "^1.16.4",
-		"tslint": "^5.14.0",
+		"tslint": "^5.15.0",
 		"tslint-config-prettier": "^1.18.0",
-		"typescript": "^3.3.4000",
-		"util.pkgwrap": "^0.0.107"
+		"typescript": "^3.4.3",
+		"util.pkgwrap": "^0.0.112"
 	},
 	"pkgwrap": {
 		"cleanup": [
-			"docs/"
+			"docs/",
+			"tsconfig.tsbuildinfo"
 		]
 	},
 	"scripts": {
 		"all": "yarn install && yarn build && yarn docs && yarn test && yarn manifest",
-		"build": "yarn clean && yarn lint && yarn prettier && yarn build:es && yarn build:umd",
+		"build": "yarn lint && yarn prettier && yarn build:es && yarn build:umd",
 		"build:es": "tsc -p . && minify index.js --out-file index.es.min.js",
 		"build:umd": "babel index.js --out-file index.umd.min.js",
 		"clean": "pkgwrap --clean",

@@ -7,6 +7,7 @@ import {
 	capitalize,
 	join,
 	regexIndexOf,
+	rstrip,
 	splitInTwo,
 	splitNL,
 	translateHTML,
@@ -100,4 +101,22 @@ test("Split a string in two by a delimiter", () => {
 	[left, right] = s.splitInTwo("abcd");
 	expect(left).toBe("left ");
 	expect(right).toBe(" right");
+});
+
+test("stripping newlines #1", () => {
+	const s = "line 1\n";
+	expect(rstrip(s)).toBe("line 1");
+	expect(s.rstrip()).toBe("line 1");
+});
+
+test("stripping newlines #2", () => {
+	const s = "line 1\r";
+	expect(rstrip(s)).toBe("line 1");
+	expect(s.rstrip()).toBe("line 1");
+});
+
+test("stripping newlines #3", () => {
+	const s = "line 1\r\n";
+	expect(rstrip(s)).toBe("line 1");
+	expect(s.rstrip()).toBe("line 1");
 });

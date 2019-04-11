@@ -13,6 +13,10 @@ delimiter.</p>
 <dt><a href="#regexIndexOf">regexIndexOf(text, re, i)</a> ⇒ <code>number</code></dt>
 <dd><p>Searches for the first location (index) within a given string using a regex</p>
 </dd>
+<dt><a href="#rstrip">rstrip(str)</a> ⇒</dt>
+<dd><p>Removes carriage return/line feed (CRLF) characters from the right side of a
+string.</p>
+</dd>
 <dt><a href="#splitInTwo">splitInTwo(text, delimiter)</a> ⇒</dt>
 <dd><p>Splits a string into a left an right string tuple based on a given delimiter.
 The delimter is not included in either string (the first instance encountered)
@@ -74,6 +78,18 @@ If it is not found, then -1 is returned.
 - text <code>string</code> - the string to search within
 - re <code>RegExp</code> - the regex object to search with
 - i <code>number</code> - a starting index value
+
+<a name="rstrip"></a>
+
+## rstrip(str) ⇒
+Removes carriage return/line feed (CRLF) characters from the right side of a
+string.
+
+**Kind**: global function  
+**Returns**: a new string with the CRLF removed  
+**Params**
+
+- str <code>string</code> - the string that will have the CRLF removed
 
 <a name="splitInTwo"></a>
 

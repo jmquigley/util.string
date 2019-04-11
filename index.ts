@@ -23,6 +23,7 @@ declare global {
 	interface String {
 		capitalize(): string;
 		regexIndexOf(re: RegExp, start: number): number;
+		rstrip(s: string): string;
 		splitInTwo(delimiter: string): [string, string];
 		splitNL(): string[];
 		translateHTML(): string;
@@ -36,6 +37,10 @@ String.prototype.capitalize = function() {
 
 String.prototype.regexIndexOf = function(re: RegExp, start: number = 0) {
 	return regexIndexOf(this, re, start);
+};
+
+String.prototype.rstrip = function() {
+	return rstrip(this);
 };
 
 String.prototype.splitInTwo = function(delimiter: string) {
@@ -99,6 +104,16 @@ export function regexIndexOf(
 ): number {
 	const idx: number = text.slice(start).search(re);
 	return idx < 0 ? -1 : idx + start;
+}
+
+/**
+ * Removes carriage return/line feed (CRLF) characters from the right side of a
+ * string.
+ * @param str {string} - the string that will have the CRLF removed
+ * @return a new string with the CRLF removed
+ */
+export function rstrip(str: string) {
+	return str.replace(/\r\n$|\n$|\r$/, "");
 }
 
 /**
