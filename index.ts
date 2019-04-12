@@ -1,24 +1,5 @@
 "use strict";
 
-const debug = require("debug")("util.string");
-
-import {sp} from "util.constants";
-import * as XRegExp from "xregexp";
-
-const chevrons = {
-	quot: '"',
-	nbsp: " ",
-	amp: "&",
-	lt: "<",
-	gt: ">"
-};
-
-const s = Object.keys(chevrons).join("|");
-debug("Using chevrons: %s", s);
-
-const reHTML: RegExp = XRegExp(`&(${s});`, "gi");
-const reSPC: RegExp = XRegExp(`${sp}`, "g");
-
 declare global {
 	interface String {
 		capitalize(): string;
@@ -26,8 +7,6 @@ declare global {
 		rstrip(s: string): string;
 		splitInTwo(delimiter: string): [string, string];
 		splitNL(): string[];
-		translateHTML(): string;
-		trimHTML(): string;
 	}
 }
 
@@ -49,19 +28,6 @@ String.prototype.splitInTwo = function(delimiter: string) {
 
 String.prototype.splitNL = function() {
 	return this.split(/\r\n|\n|\r/);
-};
-
-String.prototype.translateHTML = function() {
-	return this.replace(reHTML, (match: any, ele: string) => {
-		match = match;
-		return chevrons[ele];
-	});
-};
-
-String.prototype.trimHTML = function() {
-	return this.translateHTML()
-		.replace(reSPC, " ")
-		.trim();
 };
 
 /**
@@ -147,25 +113,4 @@ export function splitInTwo(text: string, delimiter: string): [string, string] {
  */
 export function splitNL(text: string): string[] {
 	return text.splitNL();
-}
-
-/**
- * Takes an input string and replaces special HTML tokens with their string
- * eqivalents.  e.g. &nbsp; is converted to a space
- * @param text {string} the text string to translate
- * @return {string} a new string with their replacements
- */
-export function translateHTML(text: string): string {
-	return text.translateHTML();
-}
-
-/**
- * This is a special trim function that will remove spaces from the front/end
- * of a string.  it will also replace all u+200b and &nbsp; characters to ' '
- * before the trim (so it can remove all types of spaces)
- * @param text {string} the text string to trim
- * @return {string} a new string with spaces trimmed.
- */
-export function trimHTML(text: string): string {
-	return text.trimHTML();
 }

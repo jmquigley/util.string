@@ -39,5 +39,3 @@ This module contains custom string functions that are not part of the current ja
 - [rstrip](docs/index.md#rstrip)
 - [splitInTwo](docs/index.md#splitInTwo)
 - [splitNL](docs/index.md#translateHTML)
-- [translateHTML](docs/index.md#translateHTML)
-- [trimHTML](docs/index.md#trimHTML)

@@ -26,15 +26,6 @@ This function will not trim the left/right string as a side effect.</p>
 <dd><p>Splits a string into an array of strings based on the newline character.  It
 will search for a windows and/or unix line endings for the split.</p>
 </dd>
-<dt><a href="#translateHTML">translateHTML(text)</a> ⇒ <code>string</code></dt>
-<dd><p>Takes an input string and replaces special HTML tokens with their string
-eqivalents.  e.g. &nbsp; is converted to a space</p>
-</dd>
-<dt><a href="#trimHTML">trimHTML(text)</a> ⇒ <code>string</code></dt>
-<dd><p>This is a special trim function that will remove spaces from the front/end
-of a string.  it will also replace all u+200b and &nbsp; characters to &#39; &#39;
-before the trim (so it can remove all types of spaces)</p>
-</dd>
 </dl>
 
 <a name="capitalize"></a>
@@ -121,29 +112,4 @@ newline characters.  The newline characters are not included.
 **Params**
 
 - text <code>string</code> - the string to split
-
-<a name="translateHTML"></a>
-
-## translateHTML(text) ⇒ <code>string</code>
-Takes an input string and replaces special HTML tokens with their string
-eqivalents.  e.g. &nbsp; is converted to a space
-
-**Kind**: global function  
-**Returns**: <code>string</code> - a new string with their replacements  
-**Params**
-
-- text <code>string</code> - the text string to translate
-
-<a name="trimHTML"></a>
-
-## trimHTML(text) ⇒ <code>string</code>
-This is a special trim function that will remove spaces from the front/end
-of a string.  it will also replace all u+200b and &nbsp; characters to ' '
-before the trim (so it can remove all types of spaces)
-
-**Kind**: global function  
-**Returns**: <code>string</code> - a new string with spaces trimmed.  
-**Params**
-
-- text <code>string</code> - the text string to trim
 

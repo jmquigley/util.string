@@ -46,4 +46,6 @@ tmp-unit-test-data
 !gulpfile.js
 !docs/**/*.js
 !jest.config.js
+!jest.setup.js
+!webpack.config.js
 tsconfig.tsbuildinfo

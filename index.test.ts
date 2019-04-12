@@ -9,9 +9,7 @@ import {
 	regexIndexOf,
 	rstrip,
 	splitInTwo,
-	splitNL,
-	translateHTML,
-	trimHTML
+	splitNL
 } from "./index";
 
 test("Test join function to combine a set into a string", () => {
@@ -35,23 +33,6 @@ test("Test searching for index in string using regex", () => {
 	// finds the second set of 'aaa', but contains abs index
 	expect(regexIndexOf("aaabbbcccaaa", /aaa/, 3)).toBe(9);
 	expect("aaabbbcccaaa".regexIndexOf(/aaa/, 3)).toBe(9);
-});
-
-test("Test translation of HTML string entities", () => {
-	expect("abc &quot; def".translateHTML()).toBe('abc " def');
-	expect(translateHTML("abc &quot; def")).toBe('abc " def');
-	expect(translateHTML("abc &nbsp; def")).toBe("abc   def");
-	expect(translateHTML("abc &amp; def")).toBe("abc & def");
-	expect(translateHTML("abc &lt; def")).toBe("abc < def");
-	expect(translateHTML("abc &gt; def")).toBe("abc > def");
-});
-
-test("Test special HTML trim function", () => {
-	expect(`&nbsp; abc ${sp}`.trimHTML()).toBe("abc");
-	expect(trimHTML(`&nbsp; abc ${sp}`)).toBe("abc");
-	expect(trimHTML(`abc &nbsp; def`)).toBe("abc   def");
-	expect(trimHTML(`${sp}abc${sp}def${sp}`)).toBe("abc def");
-	expect(trimHTML(`&nbsp;abc&nbsp;def&nbsp;`)).toBe("abc def");
 });
 
 test("Test the capitalize function", () => {
