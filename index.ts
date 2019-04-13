@@ -4,7 +4,7 @@ declare global {
 	interface String {
 		capitalize(): string;
 		regexIndexOf(re: RegExp, start: number): number;
-		rstrip(s: string): string;
+		rstrip(): string;
 		splitInTwo(delimiter: string): [string, string];
 		splitNL(): string[];
 	}
