@@ -11,7 +11,8 @@ module.exports = {
 	output: {
 		path: path.resolve(__dirname),
 		filename: "index.umd.min.js",
-		libraryTarget: "umd"
+		libraryTarget: "umd",
+		globalObject: "this"
 	},
 	resolve: {
 		extensions: [".js", ".css"]
