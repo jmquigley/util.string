@@ -54,6 +54,11 @@ test("Test splitting a string on newline characters", () => {
 	expect("\ra\nb\r\nc\n".splitNL()).toEqual(["", "a", "b", "c"]);
 });
 
+test("Split a string by newlines with an empty string", () => {
+	expect(splitNL("")).toEqual([]);
+	expect("".splitNL()).toEqual([]);
+});
+
 test("Split a string in two by a delimiter", () => {
 	let s = "The left side . The right side.";
 	let [left, right] = splitInTwo(s, ".");

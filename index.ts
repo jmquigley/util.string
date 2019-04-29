@@ -28,7 +28,7 @@ String.prototype.splitInTwo = function(delimiter: string) {
 };
 
 String.prototype.splitNL = function() {
-	return rstrip(this).split(reNL);
+	return splitNL(this);
 };
 
 /**
@@ -113,5 +113,11 @@ export function splitInTwo(text: string, delimiter: string): [string, string] {
  * newline characters.  The newline characters are not included.
  */
 export function splitNL(text: string): string[] {
-	return text.splitNL();
+	const s: string = rstrip(text);
+
+	if (s) {
+		return s.split(reNL);
+	}
+
+	return [];
 }
