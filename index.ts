@@ -1,4 +1,5 @@
-"use strict";
+const reNL = /\r\n|\n|\r/gi;
+const reNLEOL = /\r\n$|\n$|\r$/;
 
 declare global {
 	interface String {
@@ -27,7 +28,7 @@ String.prototype.splitInTwo = function(delimiter: string) {
 };
 
 String.prototype.splitNL = function() {
-	return this.split(/\r\n|\n|\r/);
+	return rstrip(this).split(reNL);
 };
 
 /**
@@ -79,7 +80,7 @@ export function regexIndexOf(
  * @return a new string with the CRLF removed
  */
 export function rstrip(str: string) {
-	return str.replace(/\r\n$|\n$|\r$/, "");
+	return str.replace(reNLEOL, "");
 }
 
 /**

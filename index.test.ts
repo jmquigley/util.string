@@ -49,6 +49,9 @@ test("Test splitting a string on newline characters", () => {
 
 	expect(splitNL("a\r\nb\r\nc")).toEqual(["a", "b", "c"]);
 	expect("a\r\nb\r\nc".splitNL()).toEqual(["a", "b", "c"]);
+
+	expect(splitNL("\ra\nb\r\nc\n")).toEqual(["", "a", "b", "c"]);
+	expect("\ra\nb\r\nc\n".splitNL()).toEqual(["", "a", "b", "c"]);
 });
 
 test("Split a string in two by a delimiter", () => {
