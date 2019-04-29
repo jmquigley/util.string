@@ -44,6 +44,9 @@ test("Test splitting a string on newline characters", () => {
 	expect(splitNL("a\nb\nc")).toEqual(["a", "b", "c"]);
 	expect("a\nb\nc".splitNL()).toEqual(["a", "b", "c"]);
 
+	expect(splitNL("a\\nb\\nc")).toEqual(["a", "b", "c"]);
+	expect("a\\nb\\nc".splitNL()).toEqual(["a", "b", "c"]);
+
 	expect(splitNL("a\rb\rc")).toEqual(["a", "b", "c"]);
 	expect("a\rb\rc".splitNL()).toEqual(["a", "b", "c"]);
 
@@ -93,19 +96,37 @@ test("Split a string in two by a delimiter", () => {
 });
 
 test("stripping newlines #1", () => {
-	const s = "line 1\n";
+	let s = "line 1\n";
+
+	expect(rstrip(s)).toBe("line 1");
+	expect(s.rstrip()).toBe("line 1");
+
+	s = "line 1\\n";
+
 	expect(rstrip(s)).toBe("line 1");
 	expect(s.rstrip()).toBe("line 1");
 });
 
 test("stripping newlines #2", () => {
-	const s = "line 1\r";
+	let s = "line 1\r";
+
+	expect(rstrip(s)).toBe("line 1");
+	expect(s.rstrip()).toBe("line 1");
+
+	s = "line 1\\r";
+
 	expect(rstrip(s)).toBe("line 1");
 	expect(s.rstrip()).toBe("line 1");
 });
 
 test("stripping newlines #3", () => {
-	const s = "line 1\r\n";
+	let s = "line 1\r\n";
+
+	expect(rstrip(s)).toBe("line 1");
+	expect(s.rstrip()).toBe("line 1");
+
+	s = "line 1\\r\\n";
+
 	expect(rstrip(s)).toBe("line 1");
 	expect(s.rstrip()).toBe("line 1");
 });

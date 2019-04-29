@@ -1,5 +1,5 @@
-const reNL = /\r\n|\n|\r/gi;
-const reNLEOL = /\r\n$|\n$|\r$/;
+const reNL = /\r\n|\n|\r|\\r\\n|\\n|\\r/gim;
+const reNLEOL = /\r\n$|\n$|\r$|\\r\\n$|\\n$|\\r$/gim;
 
 declare global {
 	interface String {
