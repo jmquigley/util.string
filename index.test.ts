@@ -5,6 +5,7 @@
 import {sp} from "util.constants";
 import {
 	capitalize,
+	hashCode,
 	join,
 	regexIndexOf,
 	rstrip,
@@ -129,4 +130,25 @@ test("stripping newlines #3", () => {
 
 	expect(rstrip(s)).toBe("line 1");
 	expect(s.rstrip()).toBe("line 1");
+});
+
+test("Testing hash code creation", () => {
+	const s0 = "";
+	const s1 = "test string 1";
+	const s2 = "test string 2";
+	const s3 = "the quick brown fox jumps over the lazy dog";
+
+	expect(hashCode(s0)).toBe(0);
+
+	expect(hashCode(s1)).toBe(3161057047);
+	expect(hashCode(s1)).toBe(3161057047);
+	expect(s1.hashCode()).toBe(3161057047);
+
+	expect(hashCode(s2)).toBe(3161057044);
+	expect(hashCode(s2)).toBe(3161057044);
+	expect(s2.hashCode()).toBe(3161057044);
+
+	expect(hashCode(s3)).toBe(1224788714);
+	expect(hashCode(s3)).toBe(1224788714);
+	expect(s3.hashCode()).toBe(1224788714);
 });

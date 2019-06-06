@@ -6,6 +6,10 @@
 <pre><code>import {capitalize} from &#39;util.string&#39;;
 capitalize(&#39;abc&#39;); // &#39;Abc&#39;
 </code></pre></dd>
+<dt><a href="#hashCode">hashCode(text)</a> ⇒ <code>number</code></dt>
+<dd><p>Converts a string to a 32bit int hash number.  Based on the djb2 algorithm:
+<a href="http://www.cse.yorku.ca/~oz/hash.html">http://www.cse.yorku.ca/~oz/hash.html</a></p>
+</dd>
 <dt><a href="#join">join(obj)</a> ⇒ <code>string</code></dt>
 <dd><p>Takes a Set of strings and converts it to a string that is joined by a
 delimiter.</p>
@@ -39,10 +43,23 @@ capitalize('abc'); // 'Abc'
 ```
 
 **Kind**: global function  
-**Returns**: <code>string</code> - the newly capitalized string.  
+**Returns**: <code>string</code> - - the newly capitalized string.  
 **Params**
 
 - text <code>string</code> - the input string to cacpitalize
+
+<a name="hashCode"></a>
+
+## hashCode(text) ⇒ <code>number</code>
+Converts a string to a 32bit int hash number.  Based on the djb2 algorithm:
+http://www.cse.yorku.ca/~oz/hash.html
+
+**Kind**: global function  
+**Returns**: <code>number</code> - the new hash code related to the string as a 32-bit
+unsigned int  
+**Params**
+
+- text <code>string</code> - the string to hash
 
 <a name="join"></a>
 

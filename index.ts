@@ -4,6 +4,7 @@ const reNLEOL = /\r\n$|\n$|\r$|\\r\\n$|\\n$|\\r$/gim;
 declare global {
 	interface String {
 		capitalize(): string;
+		hashCode(): number;
 		regexIndexOf(re: RegExp, start: number): number;
 		rstrip(): string;
 		splitInTwo(delimiter: string): [string, string];
@@ -13,6 +14,10 @@ declare global {
 
 String.prototype.capitalize = function() {
 	return this.charAt(0).toUpperCase() + this.slice(1);
+};
+
+String.prototype.hashCode = function() {
+	return hashCode(this);
 };
 
 String.prototype.regexIndexOf = function(re: RegExp, start: number = 0) {
@@ -39,17 +44,39 @@ String.prototype.splitNL = function() {
  * capitalize('abc'); // 'Abc'
  * ```
  *
- * @param text {string} the input string to cacpitalize
- * @return {string} the newly capitalized string.
+ * @param text {string} - the input string to cacpitalize
+ * @return {string} - the newly capitalized string.
  */
 export function capitalize(text: string): string {
 	return text.capitalize();
 }
 
 /**
+ * Converts a string to a 32bit int hash number.  Based on the djb2 algorithm:
+ * http://www.cse.yorku.ca/~oz/hash.html
+ *
+ * @param text {string} - the string to hash
+ * @return {number} the new hash code related to the string as a 32-bit
+ * unsigned int
+ */
+export function hashCode(text: string): number {
+	let hash = 5381;
+
+	if (text.length === 0) {
+		hash = 0;
+	} else {
+		for (const char of text) {
+			hash = (hash * 33) ^ char.charCodeAt(0);
+		}
+	}
+
+	return hash >>> 0;
+}
+
+/**
  * Takes a Set of strings and converts it to a string that is joined by a
  * delimiter.
- * @param obj {Set<string>} the set of strings that will be joined together
+ * @param obj {Set<string>} - the set of strings that will be joined together
  * @return {string} a new string
  */
 export function join(obj: Set<string>, delimiter: string = ""): string {
@@ -58,9 +85,9 @@ export function join(obj: Set<string>, delimiter: string = ""): string {
 
 /**
  * Searches for the first location (index) within a given string using a regex
- * @param text {string} the string to search within
- * @param re {RegExp} the regex object to search with
- * @param i {number} a starting index value
+ * @param text {string} - the string to search within
+ * @param re {RegExp} - the regex object to search with
+ * @param i {number} - a starting index value
  * @return {number} the index value location where the regex match was found
  * If it is not found, then -1 is returned.
  */
@@ -87,8 +114,8 @@ export function rstrip(str: string) {
  * Splits a string into a left an right string tuple based on a given delimiter.
  * The delimter is not included in either string (the first instance encountered)
  * This function will not trim the left/right string as a side effect.
- * @param text {string} the string to split
- * @param delimiter {string} the string within the text string where the split
+ * @param text {string} - the string to split
+ * @param delimiter {string} - the string within the text string where the split
  * will occur.
  * @return a tuple containing the left side and the right side of the delimter.
  * both values are a string.  If no delimiter was found then the whole string
@@ -108,7 +135,7 @@ export function splitInTwo(text: string, delimiter: string): [string, string] {
 /**
  * Splits a string into an array of strings based on the newline character.  It
  * will search for a windows and/or unix line endings for the split.
- * @param text {string} the string to split
+ * @param text {string} - the string to split
  * @return {string[]} an array of strings representing each stirng split at the
  * newline characters.  The newline characters are not included.
  */
