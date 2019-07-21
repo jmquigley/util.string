@@ -5,6 +5,7 @@ declare global {
 	interface String {
 		capitalize(): string;
 		hashCode(): number;
+		parseList(delimiter: string): string[];
 		regexIndexOf(re: RegExp, start: number): number;
 		rstrip(): string;
 		splitInTwo(delimiter: string): [string, string];
@@ -18,6 +19,10 @@ String.prototype.capitalize = function() {
 
 String.prototype.hashCode = function() {
 	return hashCode(this);
+};
+
+String.prototype.parseList = function(delimiter: string = ",") {
+	return parseList(this, delimiter);
 };
 
 String.prototype.regexIndexOf = function(re: RegExp, start: number = 0) {
@@ -39,7 +44,7 @@ String.prototype.splitNL = function() {
 /**
  * Capitalizes the first letter of a string and return it.
  *
- * ```
+ * ```javascript
  * import {capitalize} from 'util.string';
  * capitalize('abc'); // 'Abc'
  * ```
@@ -77,10 +82,36 @@ export function hashCode(text: string): number {
  * Takes a Set of strings and converts it to a string that is joined by a
  * delimiter.
  * @param obj {Set<string>} - the set of strings that will be joined together
- * @return {string} a new string
+ * @param delimiter="" {string} - the string value that will be placed between
+ * each string as they are joined together.  This is empty by default.
+ * @return {string} a new string of all sub objects joined together.
  */
 export function join(obj: Set<string>, delimiter: string = ""): string {
 	return Array.from(obj).join(delimiter);
+}
+
+/**
+ * Takes a comma delimited string list, splits it into tokens and returns it
+ * as an array of strings.  The whitespace is trimmed from each string.
+ *
+ * ```javascript
+ * parseList("a, b, c");  // ["a", "b", "c"]
+ * ```
+ *
+ * @param text {string} - the string to parse
+ * @param delimiter="," {string} - the character that will be used as the
+ * split location.
+ * @return {string[]} an array of strings generated from the split operation
+ */
+export function parseList(text: string, delimiter: string = ","): string[] {
+	if (text) {
+		return text
+			.trim()
+			.split(delimiter)
+			.map((s) => s.trim());
+	}
+
+	return [];
 }
 
 /**
@@ -89,7 +120,7 @@ export function join(obj: Set<string>, delimiter: string = ""): string {
  * @param re {RegExp} - the regex object to search with
  * @param i {number} - a starting index value
  * @return {number} the index value location where the regex match was found
- * If it is not found, then -1 is returned.
+ * in the string.  If it is not found, then -1 is returned.
  */
 export function regexIndexOf(
 	text: string,

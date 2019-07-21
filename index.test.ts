@@ -7,6 +7,7 @@ import {
 	capitalize,
 	hashCode,
 	join,
+	parseList,
 	regexIndexOf,
 	rstrip,
 	splitInTwo,
@@ -151,4 +152,21 @@ test("Testing hash code creation", () => {
 	expect(hashCode(s3)).toBe(1224788714);
 	expect(hashCode(s3)).toBe(1224788714);
 	expect(s3.hashCode()).toBe(1224788714);
+});
+
+test("Test parsing a comma delimited list", () => {
+	expect(parseList("a,b,c")).toEqual(["a", "b", "c"]);
+	expect("a, b, c".parseList()).toEqual(["a", "b", "c"]);
+
+	expect(parseList("  a,    b,       c   ")).toEqual(["a", "b", "c"]);
+	expect("  a,    b,       c   ".parseList()).toEqual(["a", "b", "c"]);
+
+	expect(parseList("a")).toEqual(["a"]);
+	expect("a".parseList()).toEqual(["a"]);
+
+	expect(parseList("a;b;c", ";")).toEqual(["a", "b", "c"]);
+	expect("a;b;c".parseList(";")).toEqual(["a", "b", "c"]);
+
+	expect(parseList(null)).toEqual([]);
+	expect(parseList("")).toEqual([]);
 });

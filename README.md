@@ -36,6 +36,7 @@ This module contains custom string functions that are not part of the current ja
 - [capitalize](docs/index.md#capitalize)
 - [hashCode](docs/index.md#hashCode)
 - [join](docs/index.md#join)
+- [parseList](docs/index.md#parseList)
 - [regexIndexOf](docs/index.md#regexIndexOf)
 - [rstrip](docs/index.md#rstrip)
 - [splitInTwo](docs/index.md#splitInTwo)
