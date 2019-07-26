@@ -41,3 +41,6 @@ This module contains custom string functions that are not part of the current ja
 - [rstrip](docs/index.md#rstrip)
 - [splitInTwo](docs/index.md#splitInTwo)
 - [splitNL](docs/index.md#translateHTML)
+- [trim](docs/index.md#trim)
+
+These functions, with the exception of join, are also [monkey patched](https://en.wikipedia.org/wiki/Monkey_patch) in the `String.prototype`, so they have a `.{function}` equivalent on strings.

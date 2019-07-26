@@ -1,8 +1,6 @@
-"use strict";
-
 // const debug = require('debug')('util.string.test');
 
-import {sp} from "util.constants";
+import {nl, sp} from "util.constants";
 import {
 	capitalize,
 	hashCode,
@@ -11,7 +9,8 @@ import {
 	regexIndexOf,
 	rstrip,
 	splitInTwo,
-	splitNL
+	splitNL,
+	trim
 } from "./index";
 
 test("Test join function to combine a set into a string", () => {
@@ -40,6 +39,7 @@ test("Test searching for index in string using regex", () => {
 test("Test the capitalize function", () => {
 	expect("abc".capitalize()).toBe("Abc");
 	expect(capitalize("abc")).toBe("Abc");
+	expect(capitalize("1abc")).toBe("1abc");
 });
 
 test("Test splitting a string on newline characters", () => {
@@ -164,9 +164,25 @@ test("Test parsing a comma delimited list", () => {
 	expect(parseList("a")).toEqual(["a"]);
 	expect("a".parseList()).toEqual(["a"]);
 
-	expect(parseList("a;b;c", ";")).toEqual(["a", "b", "c"]);
-	expect("a;b;c".parseList(";")).toEqual(["a", "b", "c"]);
+	expect(parseList("a;b;c", true, ";")).toEqual(["a", "b", "c"]);
+	expect("a;b;c".parseList(true, ";")).toEqual(["a", "b", "c"]);
 
 	expect(parseList(null)).toEqual([]);
 	expect(parseList("")).toEqual([]);
+	expect(parseList(sp)).toEqual([]);
+
+	// turn off pruning in test
+	expect(parseList(sp, false)).toEqual([""]);
+	expect(parseList(",,a,b,c", false)).toEqual(["", "", "a", "b", "c"]);
+});
+
+test("Test the custom trim function", () => {
+	[
+		"     test    ",
+		`${nl}    test    ${nl}`,
+		`${nl}${sp}   test    ${sp}${nl}`
+	].forEach((s: string) => {
+		expect(trim(s)).toEqual("test");
+		expect(s.trim()).toEqual("test");
+	});
 });
