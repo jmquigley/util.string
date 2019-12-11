@@ -3,19 +3,17 @@
 <dl>
 <dt><a href="#capitalize">capitalize(text)</a> ⇒ <code>string</code></dt>
 <dd><p>Capitalizes the first letter of a string and return it.</p>
-<pre><code class="lang-javascript">import {capitalize} from &#39;util.string&#39;;
+<pre><code class="language-javascript">import {capitalize} from &#39;util.string&#39;;
 
-capitalize(&#39;abc&#39;); // &#39;Abc&#39;
-</code></pre>
+capitalize(&#39;abc&#39;); // &#39;Abc&#39;</code></pre>
 </dd>
 <dt><a href="#hashCode">hashCode(text)</a> ⇒ <code>number</code></dt>
 <dd><p>Converts a string to a 32bit int hash number.  Based on the djb2 algorithm:
 <a href="http://www.cse.yorku.ca/~oz/hash.html">http://www.cse.yorku.ca/~oz/hash.html</a></p>
-<pre><code class="lang-javascript">import {hashCode} from &#39;util.string&#39;;
+<pre><code class="language-javascript">import {hashCode} from &#39;util.string&#39;;
 
 const s = &quot;the quick brown fox jumps over the lazy dog&quot;;
-hashCode(s); // 1224788714
-</code></pre>
+hashCode(s); // 1224788714</code></pre>
 </dd>
 <dt><a href="#join">join(obj, delimiter)</a> ⇒ <code>string</code></dt>
 <dd><p>Takes a Set of strings and converts it to a string that is joined by a
@@ -26,42 +24,36 @@ String.prototype.</p>
 <dd><p>Takes a comma delimited string list, splits it into tokens and returns it
 as an array of strings.  The whitespace is trimmed from each string and
 empty strings are removed from the list by default (pruning).</p>
-<pre><code class="lang-javascript">import {parseList} from &#39;util.string&#39;;
-parseList(&quot;a, b, c&quot;);  // [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]
-</code></pre>
+<pre><code class="language-javascript">import {parseList} from &#39;util.string&#39;;
+parseList(&quot;a, b, c&quot;);  // [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]</code></pre>
 <p>The pruning can be turned off by setting the second parameter to false</p>
-<pre><code class="lang-javascript">parseList(&quot;, , a, b, c&quot;);  // [&quot;&quot;, &quot;&quot;, &quot;a&quot;, &quot;b&quot;, &quot;c&quot;]
-</code></pre>
+<pre><code class="language-javascript">parseList(&quot;, , a, b, c&quot;);  // [&quot;&quot;, &quot;&quot;, &quot;a&quot;, &quot;b&quot;, &quot;c&quot;]</code></pre>
 </dd>
 <dt><a href="#regexIndexOf">regexIndexOf(text, re, i)</a> ⇒ <code>number</code></dt>
 <dd><p>Searches for the first location (index) within a given string using a regex.
 The index starts at 0.</p>
-<pre><code class="lang-javascript">import {regexIndexOf} from &#39;util.string&#39;;
-regexIndexOf(&quot;abcdefghijk&quot;, /k/); // 10
-</code></pre>
+<pre><code class="language-javascript">import {regexIndexOf} from &#39;util.string&#39;;
+regexIndexOf(&quot;abcdefghijk&quot;, /k/); // 10</code></pre>
 </dd>
 <dt><a href="#rstrip">rstrip(str)</a> ⇒</dt>
 <dd><p>Removes carriage return/line feed (CRLF) characters from the right side of a
 string.</p>
-<pre><code class="lang-javascript">import {rstrip} from &#39;util.string&#39;;
-rstrip(&quot;some string\r\n&quot;);  // &quot;some string&quot;
-</code></pre>
+<pre><code class="language-javascript">import {rstrip} from &#39;util.string&#39;;
+rstrip(&quot;some string\r\n&quot;);  // &quot;some string&quot;</code></pre>
 </dd>
 <dt><a href="#splitInTwo">splitInTwo(text, delimiter)</a> ⇒</dt>
 <dd><p>Splits a string into a left an right string tuple based on a given delimiter.
 The delimter is not included in either string (the first instance encountered)
 This function will not trim the left/right string as a side effect.</p>
-<pre><code class="lang-javascript">import {splitInTwo} from &#39;util.string&#39;;
+<pre><code class="language-javascript">import {splitInTwo} from &#39;util.string&#39;;
 let s = &quot;The left side . The right side.&quot;;
-splitInTwo(s, &quot;.&quot;); // [&quot;The left side &quot;, &quot; The right side.&quot;]
-</code></pre>
+splitInTwo(s, &quot;.&quot;); // [&quot;The left side &quot;, &quot; The right side.&quot;]</code></pre>
 </dd>
 <dt><a href="#splitNL">splitNL(text)</a> ⇒ <code>Array.&lt;string&gt;</code></dt>
 <dd><p>Splits a string into an array of strings based on the newline character.  It
 will search for a windows and/or unix line endings for the split.</p>
-<pre><code class="lang-javascript">import {splitNL} from &#39;util.string&#39;;
-splitNL(&quot;a\nb\nc&quot;); // [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]
-</code></pre>
+<pre><code class="language-javascript">import {splitNL} from &#39;util.string&#39;;
+splitNL(&quot;a\nb\nc&quot;); // [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]</code></pre>
 </dd>
 <dt><a href="#trim">trim(text)</a> ⇒ <code>string</code></dt>
 <dd><p>Removes whitespaces from the front/end of a string.  This includes
@@ -69,9 +61,8 @@ whitespace defined by the regex switch \s, end of line characters
 and zero width non breaking space.  This monkey patches the built in
 version of trim to handle the unicode character space (\u200b)</p>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim</a></p>
-<pre><code class="lang-javascript">import {trim} from &#39;util.string&#39;;
-trim(&quot;\n     test    \n &quot;);  // &quot;test&quot;
-</code></pre>
+<pre><code class="language-javascript">import {trim} from &#39;util.string&#39;;
+trim(&quot;\n     test    \n &quot;);  // &quot;test&quot;</code></pre>
 </dd>
 </dl>
 
