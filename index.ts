@@ -142,8 +142,8 @@ export function parseList(
 		return text
 			.trim()
 			.split(delimiter)
-			.map((s) => s.trim())
-			.filter((it) => (prune ? it : true));
+			.map(s => s.trim())
+			.filter(it => (prune ? it : true));
 	}
 
 	return [];
