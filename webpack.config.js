@@ -6,7 +6,7 @@ let mode = process.env.NODE_ENV || "development";
 
 module.exports = {
 	mode,
-	performance: { hints: false },
+	performance: {hints: false},
 	entry: [path.resolve(__dirname, "index.js")],
 	output: {
 		path: path.resolve(__dirname),

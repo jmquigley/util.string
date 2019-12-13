@@ -1,6 +1,6 @@
 // const debug = require('debug')('util.string.test');
 
-import { nl, sp } from "util.constants";
+import {nl, sp} from "util.constants";
 import {
 	capitalize,
 	hashCode,

@@ -7158,10 +7158,10 @@ util-deprecate@~1.0.1:
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
   integrity sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=
 
-util.constants@^0.0.29:
-  version "0.0.29"
-  resolved "https://registry.yarnpkg.com/util.constants/-/util.constants-0.0.29.tgz#c5432546fdba56b469145b52a033462301c56866"
-  integrity sha512-fnaru6jY9wVwyGAJR3PqFFCaaVRZJ7Da6qrp0Oe57AtSVL/46kIpHrX0XftN3j/LeAKL7hQ1HguzyVVX3xP9Xw==
+util.constants@^0.0.30:
+  version "0.0.30"
+  resolved "https://registry.yarnpkg.com/util.constants/-/util.constants-0.0.30.tgz#0e05b81da591f9250749deba4a31b8e54a920b2d"
+  integrity sha512-qGAcYmSeuDGiI3Wi+bBGEbMc9o1N2XN+/WUwXWiHNWL64AeOkURYY2TXXoqg6MdPsFH31eT6SG9IsD68dTd4+w==
 
 util.pkgwrap@^0.0.115:
   version "0.0.115"
